@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Hadir Siswa TJKT</title>
+    <style>
+       body {
+          background-image: linear-gradient(to right top, #00ffeb, #00ece1, #00d9d5, #00c6c9, #00b3bb);
+          font-family: Arial, sans-serif;
+          color: #444;
+          margin-top: 70px;
+        }
+        
+        h2 {
+          text-align: center;
+          font-size: 30px;
+          margin-top: 15px;
+          margin-bottom: 30px;
+        }
+        
+        .form {
+          max-width: 400px;
+          margin: 0 auto;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          padding: 20px;
+          border-radius: 10px;
+        }
+        
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+          width: 95%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          font-size: 16px;
+          color: #444;
+        }
+        
+        .submit {
+          background-color: #00c3ff;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      
+      .submit:hover {
+        background-color: #00c3ff;
+      }
+    </style>
+</head>
+<center><body>
+  <div class="form">
+  <table>
+          <td><img src="Cuplikan layar 2023-04-02 150647.png" width="40" height="40"></td>
+          <td><h3>Daftar Hadir Siswa TJKT</h3></td>
+  <table>
+          <p>Hari/Tanggal: <span id="tanggalwaktu"></span></p>
+  </table>
+    <table>
+        <tr>
+            <td><b>Nama</b></td>
+            <td><Input type="text" id="inputNama" name="nama"  autocomplete="off" placeholder="Nama" style="margin-left: 30px;"></td>
+        </tr>
+        <tr>
+            <td><b>Nis</b></td>
+            <td><input type="number" id="inputNis" name="nis"  autocomplete="off" placeholder="Nis" style="margin-left: 30px;"></td>
+        </tr>
+        <tr>
+            <td><b>Mapel</b></td>
+            <td><input type="text"  id="inputMapel" name="ttl"  autocomplete="off" placeholder="Mapel" style="margin-left: 30px;"></td>
+        </tr>
+        <tr>
+            <td><b>No.Hp</b></td>
+            <td><input type="number" id="inputNohp" name="hp"  autocomplete="off" placeholder="No.Hp" style="margin-left: 30px;"></td>
+        </tr>
+    </table>
+        <table>
+        <tr>
+            <td><button class="submit" onclick="setOutput()">Submit</button></td>
+        </tr>
+    </table>
+    <h3 id="output"></h3>
+    
+    <script>
+      function setOutput() {
+        const nama = document.getElementById('inputNama')
+        const nis = document.getElementById('inputNis')
+        const mapel = document.getElementById('inputMapel')
+        const hp = document.getElementById('inputNohp')
+        const output = document.getElementById('output')
+        output.innerHTML = nama.value + ' ' + nis.value + ' ' + mapel.value + ' ' + hp.value
+      }
+var tw = new Date();
+if (tw.getTimezoneOffset() == 0) (a=tw.getTime() + ( 7 *60*60*1000))
+else (a=tw.getTime());
+tw.setTime(a);
+var tahun= tw.getFullYear ();
+var hari= tw.getDay ();
+var bulan= tw.getMonth ();
+var tanggal= tw.getDate ();
+var hariarray=new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
+var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
+document.getElementById("tanggalwaktu").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun;
+    </script>
+</body></center>
+</html>
